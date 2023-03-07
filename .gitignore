@@ -3,4 +3,14 @@
 /largefiles/
 
 
-hexo/source/_posts/2023/.obsidian
+source/_posts/2023/.obsidian
+
+
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+_multiconfig.yml
