@@ -1,0 +1,43 @@
+name: Weekly release
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    name: Build on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node_version: [16.x]
+
+    steps:
+      - name: Create tag
+        run: |
+          echo "date=$(date +%Y%m%d)" >> $GITHUB_ENV
+
+
+      - name: Create release
+        id: step_two
+        run: |
+          echo "${{ env.date }}" # This will output 'yellow'
+      
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ env.date }}
+          release_name: Release ${{ env.date }}
+          body: |
+            Weekly release
+          draft: false
+          prerelease: false   
