@@ -99,7 +99,7 @@ social_icons:
 
 
 toc:
-  number: true
+  number: false
   wrap: true # 超出范围文字是否换行
   max_depth: 3 # <h3> ###
   expand_all: true
