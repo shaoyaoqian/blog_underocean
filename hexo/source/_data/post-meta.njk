@@ -1,0 +1,21 @@
+{### 文章编辑按钮 ###}
+{% if not is_index %}
+  {### 浏览量 
+  <span class="post-meta-item">
+  <i class="far fa-eye"></i>
+    <span class="waline-pageview-count" />
+  </span>
+  ###}
+  {### 评论量 
+  {% if post.comments %}
+  <span class="post-meta-item">
+  <i class="far fa-comment"></i>
+  <span class="waline-comment-count" />
+  </span>
+  {% endif %}
+  ###}
+  {### 编辑 ###}
+  <span class="post-meta-item">
+    <a href="{{ 'https://github.com/' + config.github.repository + '/edit' + '/source' + '/hexo/'+ config.github.branch +'/'+ post.source }}" rel="noopener" target="_blank">编辑</a>
+  </span>
+{% endif %}

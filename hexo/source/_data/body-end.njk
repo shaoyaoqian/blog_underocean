@@ -1,0 +1,72 @@
+{### 前端 ###}
+<script {{pjax}} src="/main.js"></script>
+
+{### 评论 ###}
+{###
+<script src="/waline.js"></script> ###}
+
+{### 音乐 ###}
+<script src="/musicplayer.js"></script>
+
+
+{### Upload files to GitHub ###}
+{### <input type="file" id="fileInput">
+
+<script type="module">
+  import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+  var owner = "shaoyaoqian"
+  var repo = "shaoyaoqian.github.io"
+  var release_id = "RELEASE_ID"
+  var token = "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"
+  var filename = ".gitignore"
+  var access_token = token
+  var tag = "v1.0.0"
+  const octokit = new Octokit({
+    auth: token
+  })
+// curl \
+//   -X POST \
+//   -H "Accept: application/vnd.github+json" \
+//   -H "Authorization: Bearer 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"\
+//   -H "X-GitHub-Api-Version: 2022-11-28" \
+//   -H "Content-Type: application/octet-stream" \
+//   "https://uploads.github.com/repos/shaoyaoqian/shaoyaoqian.github.io/releases/91834017/assets?name=example.zip" \
+//   --data-binary "@a.py"
+
+  async function uploadFile(file) {
+    // 获取最新的 release 信息
+    const latestRelease = await octokit.request('GET /repos/{owner}/{repo}/releases/latest', {
+      owner: owner,
+      repo: repo
+    })
+    var release_id = latestRelease.data.id;
+    filename = file.name;
+    release_id = 91834017
+    
+    // url = `https://uploads.github.com/repos/${owner}/${repo}/releases/${release_id}/assets?name=${filename}`;
+    await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
+      owner: owner,
+      repo: repo,
+      path: 'album',
+      message: 'my commit message',
+      committer: {
+        name: 'Monalisa Octocat',
+        email: 'octocat@github.com'
+      },
+      headers: {
+            "content-type": "text/plain",
+          },
+      label: "test",
+      name: "test-upload.txt",
+      // content: 'bXkgbmV3IGZpbGUgY29udGVudHM='
+    })
+    console.log(url);
+  }
+
+  
+  // document.querySelector("#fileInput").addEventListener("change", async function() {
+  //   const file = this.files[0];
+  //   await uploadFile(file);
+  // });
+</script>
+ ###}
