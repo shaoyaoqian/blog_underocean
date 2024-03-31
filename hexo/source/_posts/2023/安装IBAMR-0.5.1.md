@@ -6,6 +6,7 @@ katex: false
 comments: false
 license: false
 cc_license: false
+abbrlink: 29277
 date: 2023-11-02 14:13:35
 ---
 安装IBAMR-0.5.1
