@@ -3,7 +3,7 @@
 
 // url_base = "https://netease.pengfeima.cn"
 
-// loadCSS("https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css");
+// loadCSS("https://cdn.staticfile.net/aplayer/1.10.1/APlayer.min.css");
 
 
 
@@ -114,7 +114,7 @@
 //     },
 // }
 
-// loadScript("https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js").then(()=>{
+// loadScript("https://cdn.staticfile.net/aplayer/1.10.1/APlayer.min.js").then(()=>{
 //     loadScript("https://unpkg.com/flyio/dist/fly.min.js").then( () =>{
 //         var cfg = new Object();
 //         cfg.song_id = '16139397,1939751157';

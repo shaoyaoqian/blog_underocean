@@ -5,8 +5,8 @@ if(temp_comments.length){
   // waline
   const waline = {
     cdn : {
-        'js': 'https://cdn.staticfile.org/waline/2.14.7/waline.min.js',
-        'css': 'https://cdn.staticfile.org/waline/2.14.7/waline.min.css'
+        'js': 'https://cdn.staticfile.net/waline/2.14.7/waline.min.js',
+        'css': 'https://cdn.staticfile.net/waline/2.14.7/waline.min.css'
     }
   }
 
@@ -50,7 +50,7 @@ if(temp_comments.length){
     });
   });
 } else {
-  loadScript('https://cdn.staticfile.org/waline/2.14.7/pageview.min.js').then(()=>{
+  loadScript('https://cdn.staticfile.net/waline/2.14.7/pageview.min.js').then(()=>{
     Waline.pageviewCount({
       serverURL: 'https://waline.pengfeima.cn',
       path: window.location.pathname,

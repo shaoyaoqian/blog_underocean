@@ -4,8 +4,8 @@ console.log('前端代码');
 // Justified Gallery
 var gallery = {
     justifiedGallery : {
-        'js': 'https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js',
-        'css': 'https://cdn.staticfile.org/justifiedGallery/3.8.1/css/justifiedGallery.min.css'
+        'js': 'https://cdn.staticfile.net/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js',
+        'css': 'https://cdn.staticfile.net/justifiedGallery/3.8.1/css/justifiedGallery.min.css'
     }
 }
 var loadCSS = (href, before, media, attributes) => {
